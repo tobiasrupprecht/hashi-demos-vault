@@ -36,7 +36,8 @@ vault kv get  supersecret/admin
 #Rollback to version 2
 vault kv rollback  -version=2 supersecret/admin
 vault kv get  supersecret/admin
-----------------------------------------------------------------
+# Demo End
+# ----------------------------------------------------------------
 
 
 

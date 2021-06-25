@@ -3,7 +3,7 @@
 # Link:
 # https://github.com/hashicorp/vault-guides/tree/master/operations/local-replication
 
-# Execute the following in four separate terminals
+# Execute the following in three (four) separate terminals
 
 vrd
 vrd2
@@ -160,7 +160,7 @@ vault3 write -f /sys/replication/dr/secondary/promote dr_operation_token=${DR_OP
 
 vault3 read -format=json sys/replication/status | jq .
 
-FAILBACK for the first Vault cluster
+# FAILBACK for the first Vault cluster
 
 # Enable vault as DR secondary to vault3 This will ensure if there are changes
 # to the replication set (data; that is policies/secrets and so forth),

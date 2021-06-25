@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Put a secret (if not existing)
+vault kv put secret/mysecret value=hush
 
 #First create (or change) a policy
 echo '

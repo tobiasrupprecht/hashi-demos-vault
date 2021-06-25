@@ -79,6 +79,10 @@ path "secret/data/mysecret" {
 }' | vault policy write apps-policy -
 
 ----
+
+#Demo using UI
+
+
 # Put a secret (if not existing)
 vault kv put secret/mysecret value=hush
 # Create Token with the apps-policy policy
@@ -98,12 +102,6 @@ vault login <TOKEN>
 VAULT_TOKEN=<unwrapped token>  vault kv get secret/mysecret
 
 ---------------------------------------------------------------------------
-
-
-
-
-
-#Demo using UI
 
 # To REVOKE USER
 vault lease revoke -prefix auth/userpass/login/demo
