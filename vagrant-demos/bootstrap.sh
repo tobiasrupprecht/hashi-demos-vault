@@ -9,6 +9,8 @@ curl \
     --remote-name \
    "${VAULT_URL}/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip"
 
+#Update
+sudo apt-get update -y
 #Unzip
 sudo apt-get install -y unzip
 unzip vault_${VAULT_VERSION}_linux_amd64.zip
@@ -24,5 +26,7 @@ sudo chown root:root vault
 sudo mv vault /usr/local/bin/
 #Set profile
 cat ./profile.txt >> .bashrc
+#Set permissions
+chmod 700 -R ./0*
 #Remove .zip
 rm -rf vault_${VAULT_VERSION}_linux_amd64.zip

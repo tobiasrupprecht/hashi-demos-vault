@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/hirsute64"
   config.vm.provision "file", source: "profile.txt", destination: "$HOME/"
+  config.vm.provision "file", source: "01_versioned-static-secrets", destination: "$HOME/01_versioned-static-secrets"
+  config.vm.provision "file", source: "05_dynamic-database-secrets", destination: "$HOME/05_dynamic-database-secrets"
+  config.vm.provision "file", source: "08_MFA", destination: "$HOME/08_MFA"
   config.vm.provision :shell, path: "bootstrap.sh"
   for i in 8200..8207
     config.vm.network :forwarded_port, guest: i, host: i, host_ip: "127.0.0.1"
