@@ -52,5 +52,7 @@ vault write sys/mfa/method/totp/my_totp/admin-generate entity_id=$ENTITY_ID
 # Logging into vault with testuser token
 vault login $TOKEN
 
+# Use Base64 Anywhere & https://totp.danhersam.com/
+
 # Read the secret, specifying the mfa flag
 # vault read -mfa my_totp:<put_six_digit_number_from_device_here!> secret/foo
